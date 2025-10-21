@@ -1,0 +1,45 @@
+<div class="main-center">
+  <div class="hero">
+    <div class="hero__content">
+      <h1>
+        A Revolutionary and<br>
+        Reliable Solution for<br>
+        <span class="highlight">Global Finance</span>
+      </h1>
+      <p class="hero__subtitle">
+        We provide sustainable and open global financial<br>
+        solutions throughout the world
+      </p>
+      <div class="hero__buttons">
+        <a class="hero__btn hero__btn--primary" href="#">Get Started Now</a>
+        <a class="hero__btn hero__btn--secondary" href="#">View Live Demo</a>
+      </div>
+      <div class="hero__trust">
+        <div class="hero__avatars">
+          @for (avatar of avatars; track avatar) {
+            <img [src]="avatar" alt="user avatar">
+          }
+        </div>
+        <div class="hero__stars">
+          ★★★★★
+        </div>
+        <div class="hero__trusted">
+          Trusted by 2K+ Customers
+        </div>
+      </div>
+    </div>
+    <div class="hero__media">
+      <img src="seccion1-1.png" alt="Finance Hero" class="hero__main-image">
+    </div>
+  </div>
+  <div class="industry-leaders">
+    <div class="industry-leaders__text">
+      Industry leaders trust Payoobel to grow their revenue
+    </div>
+    <div class="industry-leaders__logos">
+      @for (item of logos; track item.src) {
+        <img src="logo.src" alt="logo.alt">
+      }
+    </div>
+  </div>
+</div>

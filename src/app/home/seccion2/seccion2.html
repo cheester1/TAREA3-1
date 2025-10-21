@@ -1,0 +1,25 @@
+<div class="platform-section">
+  <div class="platform-section__header">
+    <h2>One Customer Platform</h2>
+    <div class="platform-section__subtitle">Everyone's Business</div>
+  </div>
+  <div class="platform-section__cards">
+    @for (card of cards; track card.title) {
+      <div class="platform-card" [class]="'platform-card--' + card.cardColor">
+        <div class="platform-card__visual">
+          @if (card.type === 'stats') {
+            <app-grafi1></app-grafi1>
+          } @else if (card.type === 'chart') {
+            <app-grafi2></app-grafi2>
+          } @else if (card.type === 'payments') {
+            <app-grafi3></app-grafi3>
+          }
+        </div>
+        <div class="platform-card__category">{{ card.category }}</div>
+        <div class="platform-card__title">{{ card.title }}</div>
+        <div class="platform-card__desc">{{ card.desc }}</div>
+        <a class="platform-card__link" href="#">Learn more</a>
+      </div>
+    }
+  </div>
+</div>

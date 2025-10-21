@@ -1,0 +1,139 @@
+.access-section {
+  background: #232622;
+  padding: 0 0 3.2rem 0;
+  position: relative;
+  overflow: hidden;
+
+  &__top {
+    display: flex;
+    gap: 2.2rem;
+    justify-content: center;
+    align-items: stretch;
+    padding: 2.3rem 0 2.8rem 0;
+    flex-wrap: wrap;
+  }
+  &__card {
+    position: relative;
+    min-width: 260px;
+    max-width: 350px;
+    width: 330px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px #0003;
+    background: #212325;
+
+    img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      border-radius: 18px;
+      filter: brightness(0.86);
+    }
+    .access-section__overlay {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(0deg, #ffffff00 88%, transparent 100%);
+      color: #fff;
+      padding: 1.2rem 1.5rem 1.05rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      align-items: flex-start;
+    }
+    .access-section__title {
+      font-size: 1.13rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+    .access-section__desc {
+      font-size: 1em;
+      color: #e6e6e6;
+      margin-bottom: 0.3rem;
+    }
+    .access-section__cta {
+      background: #24695c00;
+      color: #fff;
+      padding: 0.5em 1.3em;
+      border:rgb(255, 255, 255) solid 2px;
+      border-radius: 5px;
+      font-size: 0.98em;
+      font-weight: 500;
+      text-decoration: none;
+      margin-top: 0.2rem;
+      transition: background 0.19s;
+      &:hover { background: #1d534a; }
+    }
+  }
+
+  &__main {
+    text-align: center;
+    margin-top: 2.7rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      line-height: 1.21;
+      .highlight {
+        color: #8fa8ce;
+        font-weight: 600;
+      }
+    }
+    .access-section__sub {
+      color: #e6e6e6;
+      font-size: 1.1em;
+      margin-bottom: 1.7rem;
+      margin-top: 0.7rem;
+    }
+    .access-section__getstarted {
+      background: #24695c;
+      color: #fff;
+      font-size: 1.04em;
+      padding: 0.74em 2.1em;
+      border-radius: 7px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.17s;
+      &:hover { background: #1d534a; }
+    }
+  }
+}
+
+.access-section:before,
+.access-section:after {
+  content: '';
+  position: absolute;
+  border: 13px solid #49546418;
+  border-radius: 22px;
+  width: 120px;
+  height: 120px;
+  z-index: 0;
+}
+.access-section:before {
+  top: 28px;
+  left: 10px;
+  transform: rotate(-18deg);
+}
+.access-section:after {
+  bottom: 18px;
+  right: 20px;
+  transform: rotate(12deg);
+}
+
+@media (max-width: 900px) {
+  .access-section__top {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .access-section__card {
+    width: 96vw;
+    max-width: 380px;
+    img { height: 180px; }
+  }
+}

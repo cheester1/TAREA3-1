@@ -1,0 +1,24 @@
+<div class="faqs-section">
+  <div class="faqs-section__header">
+    <h2>FAQs</h2>
+    <div class="faqs-section__subtitle">
+      Giving you the control, observability, and flexibility<br>
+      you need to build your card program, your way.
+    </div>
+  </div>
+  <div class="faqs-section__list">
+    @for ( faqItem of faqList; track faqItem.question) {
+      <div class="faq-item" [class.open]="faqItem.open">
+        <div class="faq-item__question" (click)="toggleFAQ(faqItem)">
+          {{ faqItem.question }}
+          <span class="faq-item__arrow">{{ faqItem.open ? '▲' : '▼' }}</span>
+        </div>
+        @if (faqItem.open && faqItem.answer) {
+          <div class="faq-item__answer">
+            {{ faqItem.answer }}
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="pricing-section">
+  <div class="pricing-section__header">
+    <h2>Everything You Need to Manage<br>
+      <span class="highlight">and Control Global Spend</span>
+    </h2>
+  </div>
+  <div class="pricing-section__cards">
+    @for ( card of cards; track card.title) {
+      <div class="pricing-card" [class.pricing-card--popular]="card.popular">
+        @if (card.popular) {
+          <div class="pricing-card__badge">MOST POPULAR <span>🔥</span></div>
+        }
+        <div class="pricing-card__title">{{ card.title }}</div>
+        <div class="pricing-card__desc">{{ card.desc }}</div>
+        <div class="pricing-card__price">{{ card.price }}</div>
+        <div class="pricing-card__meta">PER ACTIVE USER/MONTH</div>
+        <a class="pricing-card__cta" href="#">Get started free</a>
+        <ul class="pricing-card__features">
+          @for ( feature of card.features; track feature) {
+            <li>{{ feature }}</li>
+          } @empty {
+            <li>No features available</li>
+          }
+        </ul>
+      </div>
+    } @empty {
+      <div class="pricing-empty">No hay planes disponibles.</div>
+    }
+  </div>
+</div>

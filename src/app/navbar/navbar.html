@@ -1,0 +1,35 @@
+
+@if (bannerVisible) {
+  <div class="navbar__top-banner">
+    <span class="navbar__badge">NEW</span>
+    <span class="navbar__announcement">
+      Payoobel Conference 2024: Open opportunities and challenges for the global financial industry
+    </span>
+    <button class="navbar__close" aria-label="Close" (click)="closeBanner()">&times;</button>
+  </div>
+}
+
+<nav class="navbar__main">
+  <div class="navbar__logo">
+    <span class="navbar__logo-icon">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect width="34" height="34" rx="8" fill="#232622"/><text x="7" y="24" fill="#fff" font-size="20" font-family="sans-serif" font-weight="bold">P</text></svg>
+    </span>
+    <span class="navbar__brand">Payoobel</span>
+  </div>
+  <ul class="navbar__links">
+    @for (link of navLinks; track link.label) {
+      <li>
+        <a [href]="link.href">
+          {{ link.label }}
+          @if (link.caret) {
+            <span class="navbar__caret">&#9662;</span>
+          }
+        </a>
+      </li>
+    }
+  </ul>
+  <div class="navbar__actions">
+    <a href="#" class="navbar__login">Log In</a>
+    <a href="#" class="navbar__get-started">Get Started</a>
+  </div>
+</nav>
